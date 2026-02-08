@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <>
       {/* Mobile Header - Visible only on mobile */}
-      <div className="md:hidden fixed top-[16px] left-0 w-full z-50 px-[15px]">
+      <div className="md:hidden fixed top-[16px] left-0 w-full z-[60] px-[15px]">
         <div className="w-full h-[48px] px-4 flex justify-between items-center bg-black/20 backdrop-blur-[40px] border border-[#B76080] rounded-full">
           <span className="text-white text-lg font-bold font-montserrat tracking-tight">Edwin</span>
           <button 
@@ -50,7 +50,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="md:hidden fixed inset-[16px] z-40 bg-black/20 backdrop-blur-[40px] flex flex-col items-start pt-[80px] px-6 gap-6 rounded-[24px] border border-[#B76080]"
+            className="md:hidden fixed inset-[16px] z-[60] bg-black/20 backdrop-blur-xl flex flex-col items-start pt-[80px] px-6 gap-6 rounded-[24px] border border-[#B76080]"
           >
             {menuItems.map((item) => (
               <Link
@@ -71,7 +71,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="hidden md:block fixed top-[32px] left-1/2 -translate-x-1/2 z-50 w-[553px] h-[48px]"
+        className="hidden md:block fixed top-[32px] left-1/2 -translate-x-1/2 z-50 w-fit h-[48px]"
       >
         <div className="w-full h-full rounded-full bg-black/20 backdrop-blur-[40px] border border-white/10 shadow-lg">
           <ul className="flex items-center justify-center h-full gap-8 px-6">

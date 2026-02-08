@@ -21,7 +21,10 @@ const NotificationModal = ({ isOpen, onClose, status }: NotificationModalProps) 
         text: "Really appreciate you reaching out. I’ll be in touch soon.",
         buttonText: "Back to Home",
         buttonAction: onClose,
-        headerBg: "bg-[#F3B64C]"
+        headerBg: "bg-[#F3B64C]",
+        imageClass: "w-[221px] md:w-[262px] z-10",
+        modalClass: "max-w-[361px] md:max-w-[518px] min-h-[381px] md:min-h-[449px]",
+        headerClass: "h-[183px] md:h-[225px]"
     },
     error: {
         image: "/assets/failed.png",
@@ -29,7 +32,10 @@ const NotificationModal = ({ isOpen, onClose, status }: NotificationModalProps) 
         text: "Sorry about that. Please check your connection and try again.",
         buttonText: "Try Again",
         buttonAction: onClose,
-        headerBg: "bg-[#E9EAEB]"
+        headerBg: "bg-[#E9EAEB]",
+        imageClass: "w-[214px] md:w-[260px] z-10",
+        modalClass: "max-w-[361px] md:max-w-[518px] min-h-[381px] md:min-h-[449px]",
+        headerClass: "h-[183px] md:h-[225px]"
     }
   };
 
@@ -55,27 +61,27 @@ const NotificationModal = ({ isOpen, onClose, status }: NotificationModalProps) 
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="bg-white rounded-[24px] w-full max-w-[520px] overflow-hidden text-center relative pointer-events-auto shadow-2xl border border-[#B76080]"
+              className={`bg-white rounded-[24px] w-full text-center relative pointer-events-auto shadow-2xl border border-[#B76080] ${currentContent.modalClass}`}
             >
               {/* Top Section: Dynamic Background */}
-              <div className={`${currentContent.headerBg} p-6 pb-0 relative`}>
+              <div className={`${currentContent.headerBg} p-6 pb-0 relative flex flex-col justify-end items-center rounded-t-[24px] ${currentContent.headerClass || ''}`}>
                   
                   {/* Image */}
-                  <div className="flex justify-center mb-6 mt-2 relative">
+                  <div className="flex justify-center relative">
                      <div className="relative">
                         <Image 
                             src={currentContent.image} 
                             alt={status} 
-                            width={180} 
-                            height={160} 
-                            className="object-contain" 
+                            width={263} 
+                            height={294} 
+                            className={`object-contain h-auto ${currentContent.imageClass}`} 
                         />
                      </div>
                   </div>
               </div>
 
               {/* Bottom Section: White Background */}
-              <div className="bg-white p-8">
+              <div className="bg-white p-6 md:p-8 rounded-b-[24px]">
                   {/* Text */}
                   <h3 className="text-[24px] font-bold font-montserrat text-[#0A0D12] mb-3">
                     {currentContent.title}

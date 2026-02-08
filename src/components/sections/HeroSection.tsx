@@ -73,7 +73,7 @@ const Statistics = () => {
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.4 }}
-      className="md:absolute md:right-[120px] md:top-[237px] w-full md:w-[222px] z-10 flex flex-col gap-5 px-8 md:px-0 mt-4 md:mt-0"
+      className="md:absolute md:right-[120px] md:top-[237px] w-full md:w-[222px] z-40 flex flex-col gap-5 px-8 md:px-0 mt-4 md:mt-0"
     >
       <div className="grid grid-cols-2 gap-8 md:flex md:flex-col md:gap-5">
         {stats.map((stat, index) => (
